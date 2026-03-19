@@ -1,10 +1,12 @@
 AWSTemplateFormatVersion: '2010-09-09'
 
-Parameters:
-  ArtifactBucket:
-    Type: String
-
 Resources:
+
+  ArtifactBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${AWS::StackName}-artifacts"
+
   MyS3Bucket:
     Type: AWS::S3::Bucket
 
